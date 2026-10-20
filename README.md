@@ -1,3 +1,4 @@
+<!-- budget test -->
 # COSMIC Text
 
 [![crates.io](https://img.shields.io/crates/v/cosmic-text.svg)](https://crates.io/crates/cosmic-text)
