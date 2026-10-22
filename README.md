@@ -78,6 +78,27 @@ with the use of backspace and delete tested per character and per line. Then,
 the final contents of the buffer is compared to the original file. All of the
 106746 lines are correct.
 
+## Testing
+
+The full test suite (unit tests, doc tests, and the integration tests under
+`tests/`) is run with all crate features enabled:
+
+```sh
+cargo test --all-features
+```
+
+This is also the exact command `ci.sh` runs as its final step, after checking
+formatting (`cargo fmt --check`) and building the crate under several feature
+combinations (default, `no_std`, `std`, `std,swash`, `std,syntect`,
+`std,vi`, and `--all-features`). Running `./ci.sh` therefore builds every
+supported configuration and then runs `cargo test --all-features` for you in
+one go.
+
+No Rust toolchain was available in the environment used to prepare this
+change, so the suite could not actually be executed here; the command above
+and the timing will depend on your machine and on whether crates and build
+artifacts are already cached locally.
+
 ## License
 
 Licensed under either of
